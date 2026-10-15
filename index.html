@@ -1,4 +1,8 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sapphire Helper Incident</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,6 +52,8 @@ nav.top{display:flex;align-items:center;justify-content:space-between;gap:14px;f
 .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;padding-block:36px 30px}
 .status{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-mono);font-size:12.5px;color:var(--yellow);background:color-mix(in srgb,var(--yellow) 12%,transparent);border:1px solid color-mix(in srgb,var(--yellow) 35%,transparent);padding:5px 12px;border-radius:999px}
 .status i{width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+.status.ok{color:var(--green);background:color-mix(in srgb,var(--green) 12%,transparent);border-color:color-mix(in srgb,var(--green) 35%,transparent)}
+.status.ok i{background:var(--green)}
 h1{font-family:var(--f-display);font-weight:800;font-size:clamp(40px,7vw,68px);line-height:.98;letter-spacing:-.035em;margin:20px 0 18px;text-wrap:balance}
 h1 .cur{color:var(--mauve)}
 @media (prefers-reduced-motion:no-preference){h1 .cur{animation:blink 1.1s steps(1) infinite}.status i{animation:pulse 2.2s ease-in-out infinite}}
@@ -100,11 +106,14 @@ td:first-child{font-family:var(--f-display);font-weight:700;white-space:nowrap}
 .pill.ok{color:var(--green)}.pill.bad{color:var(--red)}.pill.warn{color:var(--yellow)}
 
 ol.tl{list-style:none;margin:10px 0 0;padding:0;position:relative}
-ol.tl::before{content:"";position:absolute;left:71px;top:10px;bottom:10px;width:2px;background:var(--surface);border-radius:2px}
-ol.tl li{display:grid;grid-template-columns:58px 1fr;gap:28px;padding:11px 0;position:relative}
-ol.tl li::after{content:"";position:absolute;left:66px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--base);border:2px solid var(--sapphire)}
+ol.tl::before{content:"";position:absolute;left:5px;top:12px;bottom:12px;width:2px;background:var(--surface);border-radius:2px}
+ol.tl li{padding:12px 0 12px 32px;position:relative}
+ol.tl li::after{content:"";position:absolute;left:0;top:18px;width:12px;height:12px;border-radius:50%;background:var(--base);border:2px solid var(--sapphire)}
 ol.tl li.key::after{background:var(--mauve);border-color:var(--mauve);box-shadow:0 0 0 4px color-mix(in srgb,var(--mauve) 22%,transparent)}
-ol.tl time{font-family:var(--f-mono);font-size:14px;color:var(--sub);font-variant-numeric:tabular-nums;padding-top:3px}
+ol.tl li.done::after{background:var(--green);border-color:var(--green);box-shadow:0 0 0 4px color-mix(in srgb,var(--green) 22%,transparent)}
+ol.tl time{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;font-family:var(--f-mono);font-size:13px;color:var(--sub);font-variant-numeric:tabular-nums;margin-bottom:3px}
+ol.tl time .rel{color:var(--text);font-weight:500}
+ol.tl time .abs::before{content:"·";margin-right:10px;color:var(--overlay)}
 ol.tl li > div{min-width:0}
 ol.tl strong{font-family:var(--f-display)}
 ol.tl .shot{margin-top:12px;max-width:520px}
@@ -151,11 +160,11 @@ dialog.lb button{position:absolute;top:8px;right:8px;background:#11111b;color:#c
 @media (max-width:600px){
   body{font-size:16.5px}
   .chain,.split,.pair,.links{grid-template-columns:1fr}
-  ol.tl::before{left:53px}
-  ol.tl li{grid-template-columns:44px 1fr;gap:22px}
-  ol.tl li::after{left:48px}
 }
 </style>
+</head>
+<body>
+
 
 <div class="wrap">
   <nav class="top">
@@ -177,13 +186,13 @@ dialog.lb button{position:absolute;top:8px;right:8px;background:#11111b;color:#c
 
   <header class="hero">
     <div>
-      <span class="status"><i></i>cause identified · sapphire coming back online</span>
+      <span class="status ok"><i></i>resolved · sapphire is back online</span>
       <h1>the sapphire helper incident<span class="cur">_</span></h1>
-      <p class="dek">On 14 October 2026 the helper bot in Sapphire's support server was used to mass-ping everyone. Sapphire says it was not hacked and no user data was accessed. The main bot went offline on purpose while every token was rotated.</p>
+      <p class="dek">On 14 October 2026 the helper bot in Sapphire's support server was used to mass-ping everyone. Sapphire says it was not hacked and no user data was accessed. The main bot went offline on purpose while every token was rotated, and everything was back just after midnight.</p>
       <div class="meta">
         <span>date <b>14 oct 2026</b></span>
         <span>times <b>CEST · UTC+2</b></span>
-        <span>updated <b>17:31</b></span>
+        <span>updated <b><time class="live" datetime="2026-10-15T12:45:00+02:00">15 oct, 12:45</time></b></span>
       </div>
     </div>
     <figure class="hero-shot">
@@ -198,7 +207,7 @@ dialog.lb button{position:absolute;top:8px;right:8px;background:#11111b;color:#c
         <li><span>A flaw in a separate open-source project, <strong>Sapphire Images</strong>, running on one of Sapphire's servers, let someone read a password file. That file held the token for <strong>Sapphire Helper</strong>.</span></li>
         <li><span>The person used the token to send <code>@everyone</code> pings in the support server, then messaged the team to explain the issue.</span></li>
         <li><span><strong>Sapphire was not hacked and no user data was accessed</strong>, according to its developer.</span></li>
-        <li><span>Sapphire and all custom branded bots were <strong>shut down on purpose</strong> to rotate every token. They come back once that's done.</span></li>
+        <li><span>Sapphire and all custom branded bots were <strong>shut down on purpose</strong> to rotate every token. Everything, including appeal.gg, was fully back by 00:18 on 15 October.</span></li>
       </ul>
     </div>
 
@@ -242,39 +251,42 @@ dialog.lb button{position:absolute;top:8px;right:8px;background:#11111b;color:#c
           <tbody>
             <tr><td>Sapphire Helper</td><td><span class="pill bad">token exposed</span></td><td>Token read from a password file and used for the pings. Taken offline, token reset.</td></tr>
             <tr><td>Support server</td><td><span class="pill warn">disrupted</span></td><td>Mass pings, channel lockdowns, invites paused.</td></tr>
-            <tr><td>Sapphire (main bot)</td><td><span class="pill warn">offline on purpose</span></td><td>Not hacked. Shut down around 16:49 so its token could be rotated.</td></tr>
-            <tr><td>Custom branded bots</td><td><span class="pill warn">offline on purpose</span></td><td>Shut down with the main bot for the same reason.</td></tr>
-            <tr><td>Dashboard</td><td><span class="pill warn">not working</span></td><td>Loading forever and buttons not responding during the shutdown.</td></tr>
+            <tr><td>Sapphire (main bot)</td><td><span class="pill ok">back online</span></td><td>Not hacked. Shut down around 16:49 to rotate its token, fully back by 00:18.</td></tr>
+            <tr><td>Custom branded bots</td><td><span class="pill ok">back online</span></td><td>Shut down with the main bot for the same reason, back by 00:18.</td></tr>
+            <tr><td>appeal.gg</td><td><span class="pill ok">back online</span></td><td>Listed as fully functional again in the 00:18 announcement.</td></tr>
+            <tr><td>Dashboard</td><td><span class="pill ok">working again</span></td><td>Loaded forever with dead buttons during the shutdown. Back with the bot.</td></tr>
             <tr><td>User data</td><td><span class="pill ok">not accessed</span></td><td>Confirmed by Sapphire's developer after the fix.</td></tr>
-            <tr><td>Your server</td><td><span class="pill ok">not breached</span></td><td>Sapphire features are paused until the bot is back.</td></tr>
+            <tr><td>Your server</td><td><span class="pill ok">not breached</span></td><td>Sapphire features were paused for about 7.5 hours and work normally again.</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section id="timeline">
-      <h2><small>timeline</small>two hours, minute by minute</h2>
+      <h2><small>timeline</small>nine hours, from first ping to back online</h2>
       <ol class="tl">
-        <li class="key"><time>15:15</time><div><strong>Mass ping.</strong> Sapphire Helper posts <code>@everyone</code> with an invite to an unknown server.</div></li>
-        <li><time>15:17</time><div><strong>First staff note.</strong> The developer confirms only the helper was affected and that it isn't maintained by the core team.</div></li>
-        <li><time>15:28</time><div><strong>Official statement.</strong> Staff post an "Identified" notice, then an update that only Sapphire Helper was impacted.
+        <li class="key"><time datetime="2026-10-14T15:15:00+02:00">15:15</time><div><strong>Mass ping.</strong> Sapphire Helper posts <code>@everyone</code> with an invite to an unknown server.</div></li>
+        <li><time datetime="2026-10-14T15:17:00+02:00">15:17</time><div><strong>First staff note.</strong> The developer confirms only the helper was affected and that it isn't maintained by the core team.</div></li>
+        <li><time datetime="2026-10-14T15:28:00+02:00">15:28</time><div><strong>Official statement.</strong> Staff post an "Identified" notice, then an update that only Sapphire Helper was impacted.
           <button class="shot" data-cap="15:28 · Official statement, with the 16:39 update added later."><img src="img/02-statement.webp" width="830" height="624" alt="Official incident statement in the support server" loading="lazy"></button></div></li>
-        <li><time>15:30</time><div><strong>Lockdown.</strong> General is locked, other channels follow.</div></li>
-        <li><time>15:50</time><div><strong>Voice overflow.</strong> Voice fills past 100 people and gets locked. It's reopened and relocked several times.</div></li>
-        <li><time>15:53</time><div><strong>Token secured.</strong> Community staff say the maintainers have the helper's token under control. The helper goes offline.</div></li>
-        <li><time>16:17</time><div><strong>Invites paused.</strong> New joins through invite links are switched off during cleanup.
+        <li><time datetime="2026-10-14T15:30:00+02:00">15:30</time><div><strong>Lockdown.</strong> General is locked, other channels follow.</div></li>
+        <li><time datetime="2026-10-14T15:50:00+02:00">15:50</time><div><strong>Voice overflow.</strong> Voice fills past 100 people and gets locked. It's reopened and relocked several times.</div></li>
+        <li><time datetime="2026-10-14T15:53:00+02:00">15:53</time><div><strong>Token secured.</strong> Community staff say the maintainers have the helper's token under control. The helper goes offline.</div></li>
+        <li><time datetime="2026-10-14T16:17:00+02:00">16:17</time><div><strong>Invites paused.</strong> New joins through invite links are switched off during cleanup.
           <button class="shot" data-cap="16:17 · The paused-invites icon on the server."><img src="img/06-invites.webp" width="431" height="143" alt="Message noting invites were paused, with the paused icon" loading="lazy"></button></div></li>
-        <li><time>16:20</time><div><strong>Dashboard stops working.</strong> It loads forever and buttons like log out do nothing.
+        <li><time datetime="2026-10-14T16:20:00+02:00">16:20</time><div><strong>Dashboard stops working.</strong> It loads forever and buttons like log out do nothing.
           <button class="shot" data-cap="16:25 · The dashboard stuck on its loading screen."><img src="img/07-dashboard.webp" width="881" height="437" alt="Sapphire dashboard stuck on a loading spinner" loading="lazy"></button></div></li>
-        <li><time>16:31</time><div><strong>Main bot still up.</strong> <code>s!ping</code> answers normally: shard 801 of 1,920, 15,537 guilds.
+        <li><time datetime="2026-10-14T16:31:00+02:00">16:31</time><div><strong>Main bot still up.</strong> <code>s!ping</code> answers normally: shard 801 of 1,920, 15,537 guilds.
           <button class="shot" data-cap="16:31 · The main bot responding to s!ping."><img src="img/05-ping-ok.webp" width="663" height="240" alt="Sapphire responding to s!ping with healthy latency" loading="lazy"></button></div></li>
-        <li><time>16:39</time><div><strong>Statement updated.</strong> Staff say they're still investigating.</div></li>
-        <li><time>16:49</time><div><strong>Sapphire goes offline.</strong> The status page lists the main bot and custom branded bots as unavailable. This was the planned token rotation.
+        <li><time datetime="2026-10-14T16:39:00+02:00">16:39</time><div><strong>Statement updated.</strong> Staff say they're still investigating.</div></li>
+        <li><time datetime="2026-10-14T16:49:00+02:00">16:49</time><div><strong>Sapphire goes offline.</strong> The status page lists the main bot and custom branded bots as unavailable. This was the planned token rotation.
           <button class="shot" data-cap="16:49 · Status page during the token rotation."><img src="img/08-status.webp" width="812" height="233" alt="Sapphire status page showing main bot and custom bots unavailable" loading="lazy"></button></div></li>
-        <li class="key"><time>17:16</time><div><strong>Cause explained.</strong> The developer posts to everyone: a flaw in Sapphire Images exposed the helper's token, no user data was accessed, and Sapphire returns once tokens are rotated.</div></li>
-        <li><time>17:25</time><div><strong>General reopens.</strong> The developer says "helo" and chat floods with hellos, now with a 15 second slowmode.</div></li>
-        <li><time>17:30</time><div><strong>ETA.</strong> Asked when the bots will be back, the developer says "as soon as possible, min 30 mins still", so 18:00 at the earliest.
+        <li class="key"><time datetime="2026-10-14T17:16:00+02:00">17:16</time><div><strong>Cause explained.</strong> The developer posts to everyone: a flaw in Sapphire Images exposed the helper's token, no user data was accessed, and Sapphire returns once tokens are rotated.</div></li>
+        <li><time datetime="2026-10-14T17:25:00+02:00">17:25</time><div><strong>General reopens.</strong> The developer says "helo" and chat floods with hellos, now with a 15 second slowmode.</div></li>
+        <li><time datetime="2026-10-14T17:30:00+02:00">17:30</time><div><strong>ETA.</strong> Asked when the bots will be back, the developer says "as soon as possible, min 30 mins still", so 18:00 at the earliest.
           <button class="shot" data-cap="17:30 · The developer's ETA for the bots coming back."><img src="img/10-eta.webp" width="606" height="120" alt="Developer replying 'as soon as possible. min 30mins still' to a question about when the bots will be back" loading="lazy"></button></div></li>
+        <li class="done"><time datetime="2026-10-15T00:18:00+02:00">00:18</time><div><strong>Back online.</strong> The developer announces that Sapphire, custom branded bots and appeal.gg are fully functional again. It took longer than planned because the team wanted to be sure nothing was missed.
+          <button class="shot" data-cap="15 Oct 00:18 · Sapphire is fully back."><img src="img/11-back.webp" width="1461" height="138" alt="Developer announcing Sapphire, custom branded bots and appeal.gg are fully functional again" loading="lazy"></button></div></li>
       </ol>
       <p class="note">Times come from timestamps in the support server and are approximate.</p>
     </section>
@@ -288,14 +300,14 @@ dialog.lb button{position:absolute;top:8px;right:8px;background:#11111b;color:#c
             <li>The helper's token came from a password file exposed by Sapphire Images.</li>
             <li>Sapphire was not hacked and no user data was accessed.</li>
             <li>The person who found it told the team after using it.</li>
-            <li>The main bot's downtime is a deliberate token rotation.</li>
+            <li>The main bot's downtime was a deliberate token rotation.</li>
+            <li>Sapphire, custom branded bots and appeal.gg were fully back by 00:18 on 15 October.</li>
           </ul>
         </div>
         <div class="box no">
           <div class="lbl">not confirmed yet</div>
           <ul>
             <li>Exactly how the file could be read. The current Sapphire Images code checks image IDs with a comment saying it's there "to prevent path traversal and glob injection", which may be the fix. Its date isn't confirmed.</li>
-            <li>When Sapphire is fully back. At 17:30 the developer said "as soon as possible, min 30 mins still". Updates go to the status channel.</li>
             <li>Which permissions the helper had. Members said Administrator; its own docs ask for much less.</li>
           </ul>
         </div>
@@ -313,8 +325,8 @@ dialog.lb button{position:absolute;top:8px;right:8px;background:#11111b;color:#c
     <div class="box">
       <h3>you use sapphire</h3>
       <ul>
-        <li>Nothing to do. Your server wasn't breached.</li>
-        <li>Kicked the bot in a panic? Add it back once it's online. Settings live on Sapphire's side, so your config should still be there.</li>
+        <li>Nothing to do. Your server wasn't breached and Sapphire works again.</li>
+        <li>Kicked the bot in a panic? You can add it back now. Settings live on Sapphire's side, so your config should still be there.</li>
         <li>After re-adding, check the bot's role position. It starts at the bottom.</li>
       </ul>
     </div>
@@ -391,6 +403,33 @@ dialog.lb button{position:absolute;top:8px;right:8px;background:#11111b;color:#c
 
 <script>
 (function(){
+  var rtf=new Intl.RelativeTimeFormat('en',{numeric:'auto'});
+  var fmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Paris',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',hour12:false});
+  function rel(d){
+    var s=(d-Date.now())/1000, a=Math.abs(s);
+    if(a<60) return 'just now';
+    if(a<3600) return rtf.format(Math.round(s/60),'minute');
+    if(a<86400) return rtf.format(Math.round(s/3600),'hour');
+    if(a<2592000) return rtf.format(Math.round(s/86400),'day');
+    if(a<31536000) return rtf.format(Math.round(s/2592000),'month');
+    return rtf.format(Math.round(s/31536000),'year');
+  }
+  function tick(){
+    document.querySelectorAll('ol.tl time[datetime]').forEach(function(t){
+      var d=new Date(t.getAttribute('datetime'));
+      t.innerHTML='<span class="rel"></span><span class="abs"></span>';
+      t.firstChild.textContent=rel(d);
+      t.lastChild.textContent=fmt.format(d).toLowerCase();
+      t.title=d.toString();
+    });
+    document.querySelectorAll('time.live[datetime]').forEach(function(t){
+      var d=new Date(t.getAttribute('datetime'));
+      t.textContent=rel(d)+' · '+fmt.format(d).toLowerCase();
+    });
+  }
+  tick(); setInterval(tick,30000);
+})();
+(function(){
   var lb=document.getElementById('lb'), img=document.getElementById('lbimg'), cap=document.getElementById('lbcap');
   document.querySelectorAll('.shot').forEach(function(b){
     b.addEventListener('click',function(){
@@ -403,4 +442,5 @@ dialog.lb button{position:absolute;top:8px;right:8px;background:#11111b;color:#c
 })();
 </script>
 
-</body></html>
+</body>
+</html>
